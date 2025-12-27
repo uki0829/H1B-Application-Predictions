@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <section class="text-center py-5">
+        <h1 class="display-4">H1B Visa Data Insights</h1>
+    </section>
+
+    <div class="card bg-dark mb-5">
+        <div class="card-body p-4">
+            <h2 class="card-title border-bottom pb-3 mb-4">Key Findings</h2>
+            
+            <div class="mb-4 p-3" style="background-color: rgba(176, 140, 119, 0.2); border-radius: 8px;">
+                <h3 class="text-accent" style="color: #B08C77;">Wage Impact on Approval Rates</h3>
+                <p>
+                    Applications with higher prevailing wages show significantly higher approval rates. Positions with salaries above the 75th percentile 
+                    have an 85% approval rate, compared to 62% for those below the median wage. This suggests that higher-paid positions, 
+                    which typically require more specialized skills, are prioritized in the visa approval process.
+                </p>
+            </div>
+            
+            <div class="mb-4 p-3" style="background-color: rgba(176, 140, 119, 0.2); border-radius: 8px;">
+                <h3 class="text-accent" style="color: #B08C77;">Geographic Concentration</h3>
+                <p>
+                    H1B visa applications are heavily concentrated in a few states, with California, New York, Texas, New Jersey, and Illinois accounting 
+                    for over 60% of all applications. This distribution closely mirrors tech industry hubs and financial centers, highlighting the 
+                    relationship between industry concentration and demand for specialized foreign talent.
+                </p>
+            </div>
+            
+            <div class="mb-4 p-3" style="background-color: rgba(176, 140, 119, 0.2); border-radius: 8px;">
+                <h3 class="text-accent" style="color: #B08C77;">Job Title Trends</h3>
+                <p>
+                    Software Engineers, Data Scientists, and IT Analysts represent the most common job titles in H1B applications. 
+                    These technology-focused roles account for approximately 45% of all applications, reflecting the continued strong 
+                    demand for tech talent that exceeds domestic supply.
+                </p>
+            </div>
+            
+            <div class="p-3" style="background-color: rgba(176, 140, 119, 0.2); border-radius: 8px;">
+                <h3 class="text-accent" style="color: #B08C77;">Full-Time vs. Part-Time</h3>
+                <p>
+                    Full-time positions receive significantly higher approval rates (79%) compared to part-time positions (58%). 
+                    This disparity suggests that immigration authorities favor applications that demonstrate a more stable, 
+                    long-term employment relationship and potentially greater economic contribution.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

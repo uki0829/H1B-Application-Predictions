@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <section class="text-center py-5">
+    <h1 class="display-4 mb-3">H1B Visa Data Visualizations</h1>
+    <p class="lead mb-5">Key insights to increase your chances of H1B Visa approval</p>
+    </section>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+{% for image in images %}
+<div class="col">
+<div class="card h-100 border-0">
+<img src="{{ url_for('static', filename='visualizations/' + image) }}" 
+class="card-img-top bg-white p-2" 
+alt="Visualization" 
+style="height: 300px; object-fit: contain;" 
+data-bs-toggle="modal" 
+data-bs-target="#vizModal{{ loop.index }}" 
+role="button">
+<div class="card-body">
+<h5 class="card-title">{{ image|replace('.png', '')|replace('_', ' ')|title }}</h5>
+<p class="card-text small">This visualization provides insights into the H1B visa application trends and patterns.</p>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="vizModal{{ loop.index }}" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header border-bottom border-secondary">
+<h5 class="modal-title">{{ image|replace('.png', '')|replace('_', ' ')|title }}</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<img src="{{ url_for('static', filename='visualizations/' + image) }}" class="img-fluid" alt="Visualization">
+</div>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

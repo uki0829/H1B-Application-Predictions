@@ -1,0 +1,1 @@
+For this project I wanted to create a model that predict H1b visa application outcome, but I encounter some difficulty so I also used flask to build a multi page web just to display information and graph about the dataset in case the model dosen't work really well.

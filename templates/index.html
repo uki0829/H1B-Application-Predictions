@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="display-4 text-center mb-4">H1B Visa Prediction</h1>
+    <div class="text-center mb-5">
+    <a href="#prediction-form" class="btn btn-light me-2">Start Prediction</a>
+    <a href="/visualizations" class="btn btn-outline-light">View Data</a>
+</div>
+
+<div class="card bg-dark" id="prediction-form">
+<div class="card-body p-4">
+    <h2 class="h4 text-center mb-4">Enter Your Details</h2>
+
+{% if result %}
+<div class="alert {{ 'alert-success' if result == 'Certified' else 'alert-danger' }} text-center mb-4">
+    <h4 class="h5 mb-0">Prediction Result: {{ result }}</h4>
+</div>
+{% endif %}
+
+<form method="post">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label">Prevailing Wage (USD)</label>
+<input type="number" name="wage" class="form-control bg-dark text-white" required>
+</div>
+<div class="col-md-6">
+<label class="form-label">Year</label>
+<input type="number" name="year" class="form-control bg-dark text-white" required>
+</div>
+<div class="col-md-6">
+<label class="form-label">Longitude</label>
+<input type="number" name="longitude" class="form-control bg-dark text-white" required>
+</div>
+<div class="col-md-6">
+<label class="form-label">Latitude</label>
+<input type="number" name="latitude" class="form-control bg-dark text-white" required>
+</div>
+<div class="col-12">
+<button type="submit" class="btn w-100" style="background-color: #B08C77; color: white;">Get Prediction</button>
+</div>
+</div>
+</form>
+</div>
+{% endblock %}
